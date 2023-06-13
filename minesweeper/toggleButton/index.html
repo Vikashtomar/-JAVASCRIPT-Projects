@@ -1,0 +1,43 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+ </head>
+ <body>
+    <button onclick="myfunc()">Click me</button>
+    <h1>hello</h1>
+
+
+
+    <script>
+        function myfunc(){
+            let btn = document.querySelector("button");
+            console.log("hello")
+            if(btn.classList.contains("red")){
+                btn.classList.remove("red")
+                btn.classList.add("yellow")
+                
+            }else if(btn.classList.contains("yellow"))
+            {
+                btn.classList.remove("yellow");
+                btn.classList.add("green")
+            }
+            else if(btn.classList.contains("green")){
+                btn.classList.remove("green")
+                    btn.classList.add("red")
+
+            }
+            else{
+                btn.classList.add("red")
+            }
+            
+            
+                
+            
+        }
+    </script>
+ </body>
+ </html>

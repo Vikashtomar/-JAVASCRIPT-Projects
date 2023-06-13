@@ -1,0 +1,52 @@
+@format
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Touch Typing Project</title>
+    <style>
+      .night {
+        background-color: #000;
+        color: #fff;
+      }
+      .button_day {
+        background-color: #f1f1f1;
+        color: #000;
+      }
+      .button_night {
+        background-color: #000;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="day">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloribus ratione
+      hic adipisci ipsum perferendis repudiandae odit illo, aliquam quia maiores
+      est ullam obcaecati! Sed dolorem eos atque harum delectus et? Delectus
+      dicta fuga eveniet, reprehenderit autem, magnam minima debitis quisquam
+      similique sunt labore iusto sequi pariatur optio unde ut assumenda
+      voluptatum error doloribus? Quo modi omnis labore laborum doloremque enim.
+      Repellendus obcaecati debitis impedit officiis iure, excepturi maiores
+      quas doloremque beatae modi autem incidunt saepe illum error iste, aliquam
+      suscipit, similique exercitationem nemo esse minus! Quam sequi temporibus
+      et veniam!
+    </p>
+    <button class="button_day">Toggle Theme</button>
+
+    <!-- <button btn="myfunction()">Toggle Theme</button> -->
+    <script>
+      let btn = document.querySelector("button");
+      let pera = document.querySelector("p");
+
+      btn.onclick = () => {
+        console.log("papa");
+        pera.classList.contains("day");
+        pera.classList.add("night");
+      };
+    </script>
+  </body>
+</html>

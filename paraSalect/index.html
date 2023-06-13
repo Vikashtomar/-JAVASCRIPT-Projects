@@ -1,0 +1,44 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    <!-- <ul>
+        <a href="" class="one">one</a>
+        <a href="" class="two">Two</a>
+        <a href="" class="three">Three</a>
+        <a href="" class="four">Four</a>
+        <a href="" class="five">Five</a>
+    </ul> -->
+
+    <!-- <p id="output"></p>
+    <button onclick="print()">Click me</button> -->
+    <ul>
+        <li>click 1</li>
+        <li>click 2</li>
+        <li>click 3</li>
+        <li>click 4</li>
+    </ul>
+    <p></p>
+    <script>
+    //    d = "hello";
+    //     function print()
+    //     {
+    //         console.log(d)
+    //     document.getElementById("output").innerHTML=d
+    //     }
+    let listAll =document.querySelectorAll("ul li")
+    let para = document.querySelector("p")
+    for(let i=0;i<listAll.length;i++){
+        listAll[i].onclick=()=>{
+            para.innerHTML=listAll[i].innerHTML
+            
+        }
+    }
+    </script>
+    
+ </body>
+ </html>
