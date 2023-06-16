@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <input type="number" id="one" placeholder="Enter first number" />
+      <input type="number" id="two" placeholder="Enter second number" />
+      <label for="number">Operation</label>
+      <select id="cum" name="calc" onchange="abs()">
+        <option value="">-select-</option>
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="%">%</option>
+      </select>
+    </form>
+    <p id="para">hello</p>
+    <script>
+  
+      function abs() {
+        let first = document.querySelector("#one").value;
+        let second = document.querySelector("#two").value;
+
+        let calculter = document.querySelector("#cum").value;
+        if (calculter == "+") {
+          let calculate_value = Number(first) + Number(second);
+          document.querySelector("p").innerHTML = calculate_value;
+        }
+        if (calculter == "-") {
+          let calculate_value = Number(first) - Number(second);
+          document.querySelector("#para").innerHTML = calculate_value;
+        }
+        if (calculter == "*") {
+          let calculate_value = Number(first) * Number(second);
+          document.querySelector("p").innerHTML = calculate_value;
+        }
+        if (calculter == "%") {
+          let calculate_value = Number(first) % Number(second);
+          document.querySelector("p").innerHTML = calculate_value;
+        }
+      }
+
+      // first.addEventListener('click',myfun)
+      //   let event = document.querySelectorAll("select");
+      //   event.addEventListner("click",myfun);
+
+      //   function myfun() {
+      //     let event = document.querySelectorAll("select");
+      //   event.addEventListner("click",myfun).  =value
+    </script>
+  </body>
+</html>

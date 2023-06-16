@@ -40,7 +40,7 @@
 {
     width: 25px;
     height: 25px;
-    border: 1px dashed green;
+    border: 1px dotted green;
     background-color: gray;
     /* border-color: green;    */
     margin: 10px;
