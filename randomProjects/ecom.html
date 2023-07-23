@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>fetch</title>
+  </head>
+  <body>
+    <h2 id="quote">Javascript</h2>
+    <button id="a">Play</button>
+    <button id="b">Pause</button>
+    <p></p>
+    <script>
+      // let js = document.getElementById("quote").innerHTML;
+      // let play = document.getElementById("a");
+      // let pause = document.getElementById("b");
+      // let para = document.querySelector("p");
+
+      // let going = true;
+
+      // let output;
+
+      // function running() {
+      //   going = true;
+
+      //   if (going) {
+      //     output = setInterval(() => {
+      //       for (let i = js.length - 1; i >= 0; i--) {
+      //         para.innerHTML += js[i];
+      //       }
+      //     }, 1000);
+      //   }
+
+
+      // }
+
+      
+      // play.addEventListener("click", running);
+
+      // pause.addEventListener("click", () => {
+      //   console.log("error");
+      //   going = false;
+      //   clearInterval(output);
+      // });
+
+      let numbers = [90, 99, 88, 77, 70,78, 66, 55, 32, 97]
+//       for(let i= 0;i<numbers.length;i++){
+
+//         if(numbers[i]>=90){
+//           console.log("grade A+",numbers[i])
+//       }
+//       else if(numbers[i]> 79)
+//       {
+//       console.log("Grade B ",numbers[i]);
+//       }
+
+//       else if(numbers[i]> 69){
+//         console.log("Grade C ",numbers[i]);
+//        }
+//   else if(numbers[i]> 59)
+// {
+//   console.log("Grade D ", numbers[i]);
+// }
+// else{
+
+//   console.log("Faild less then  59 ", numbers[i])
+// }
+//       }
+
+
+
+
+numbers.forEach(num => {
+  
+  if(num>90){
+    console.log("Grade A+ ",num)
+  }
+  else if(num>80){
+    console.log("Grade B+ ",num)
+  }
+  else if(num> 69 && num<80){
+    console.log(num);
+  }
+
+  
+});
+    </script>
+  </body>
+</html>

@@ -1,0 +1,48 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fatching Data</title>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="products"></div>
+    </div>
+
+    <script>
+      // apikey "https://dummyjson.com/products"
+
+      function log() {
+        fetch("https://dummyjson.com/products")
+          .then((res) => {
+            return res.json();
+          })
+
+          // fetchingData()
+          .then((result) => {
+            console.log(result);
+            console.log(result.products)
+
+            fetching(result.products);
+          });
+      }
+      log();
+
+      function fetching(data) {
+        for(let i = 0; i < data.length;i++) {
+            let div = document.createElement('div')
+            let img = document.createElement("img");
+            img.data.thubnails;
+        div.classList.add('items')
+            console.log(data)
+
+        }
+      }
+
+      
+    </script>
+  </body>
+</html>

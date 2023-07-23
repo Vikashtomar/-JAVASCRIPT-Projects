@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flag</title>
+    <link rel="stylesheet" href="flag.css">
+
+</head>
+<body>
+    <div id="wrapper">
+        <div id ="conatiner">
+            <div class="box1">
+
+                <form action="">
+
+                    <input type ="text"  id="inp" name ="uname"placeholder="Enter Country's Name"></input>
+                    <button>Get flag</button>
+                </form>
+               
+            </div>
+            
+            <div class="box2">
+                <p></p>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- <script src="flag.js"></script> -->
+    <script>
+
+
+
+const inp = document.querySelector("input");
+const btn = document.querySelector("button");
+const para = document.querySelector("p");
+
+
+btn.addEventListener("click", function (e) {
+    e.preventDefault()
+    para.innerHTML =" "
+
+    fetch("https://flagcdn.com/en/codes.json")
+        .then(res => res.json())
+        .then(data => {
+        
+        
+                
+            
+                for(let key in data){
+                    
+                    if(data[key].toLowerCase()===inp.value){
+
+                        let img = document.createElement("img");
+                        img.src = "https://flagcdn.com/256x192/"+key+".png";
+                        para.appendChild(img)
+                        // inp.value=" "
+                       
+                }
+                }
+
+
+ 
+            
+                
+
+
+                
+            
+
+        })
+
+            
+         
+
+
+
+})
+
+    </script>
+</body>
+
+
+

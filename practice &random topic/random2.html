@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>Randome Text</button>
+    <p></p>
+
+    <script>
+
+        let nums = [2,3,4,56,34];
+
+        let btn = document.querySelector("button");
+        let result = document.querySelector("p");
+        btn.addEventListener("click",function(){
+            for(let i=0; i<nums.length; i++){
+                result.innerHTML = Math.floor(Math.random(nums.length *10))
+                console.log(result)
+            }
+        })
+
+        
+        
+    </script>
+    
+</body>
+</html>

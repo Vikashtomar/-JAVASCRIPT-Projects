@@ -1,16 +1,42 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Random Quote Generator</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Random Quote Generator</h1>
-    <div id="quote-display"></div>
-    <button id="new-quote-btn">New Quote</button>
-  </div>
+<!-- @format -->
 
-  <script src="script.js"></script>
-</body>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="container">
+      <h1>Random Quote Generator</h1>
+      <div id="quotes"></div>
+      <button onclick="generate()">Quote Btn</button>
+    </div>
+  </body>
+
+  <script>
+  async  function generate() {
+    let response = await fetch('')
+    console.log(response.status);
+    if(response.status === 200){
+    let data = await response.text;
+    }
+    console.log(response)
+
+    
+
+      const quotes = [
+        "hello",
+        "hello1",
+        "Hello2",
+        "Hello3",
+        "Hello4",
+        "Hello5"
+      ];
+      const randomquote = Math.floor(Math.random() * quotes.length);
+      document.getElementById("quotes").innerHTML = quotes[randomquote];
+    }
+    generate()
+  </script>
 </html>
