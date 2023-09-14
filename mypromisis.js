@@ -15,7 +15,9 @@ const cart = ['kurta','pajama','paint']
                 const orderid = "123"
                 if(orderid)
                 {
-                    resolve(orderid)
+                    setTimeout(()=>{
+                        resolve(orderid)
+                    },5000)
                 }
             })
             return pr
