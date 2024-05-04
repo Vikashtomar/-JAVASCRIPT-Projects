@@ -35,6 +35,7 @@
             padding: 10px;
             margin-bottom: 5px;
             border-radius: 5px;
+            
         }
 
         button{
@@ -44,6 +45,7 @@
             padding: 10px 20px;
             cursor: pointer;
             border-radius: 5px;
+            margin-left: 10px;
 
         }
     </style>
@@ -56,6 +58,8 @@
         <h1>To do List</h1>
         <input type="text" id="taskInput" placeholder="Enter a new task">
         <button onclick="addTask()">Add Task</button>
+      
+        <!-- <button onclick="dltBtn()">Remove Task</button> -->
         <ul id="taskList">
 
         </ul>
@@ -64,9 +68,9 @@
   
     <script>
      // FUNCTIONALITY  to add 
+     let taskList = document.getElementById("taskList");
      function addTask(){
         let taskInp = document.getElementById("taskInput");
-        let taskList = document.getElementById("taskList");
         let taskText = taskInp.value;
 
         if(taskText.trim() === "")
@@ -76,20 +80,31 @@
         }
         var li = document.createElement("li");
         li.textContent = taskText;
+        // taskList.appendChild(li);
+
+        // taskInp.value = " ";
+        
+
+        //funtionality of deletaion
+
+        var deleteBtn = document.createElement("button");
+        deleteBtn.textContent = "Delete";
+        deleteBtn.onclick = function(){
+            li.remove();
+        }
+        // append delete button to the list item
+        li.appendChild(deleteBtn);
         taskList.appendChild(li);
 
         taskInp.value = " ";
+        taskInp.focus()
      }
 
-     let dltbtn= document.createElement("button");
-     dltbtn.textContent = "Delete";
-     dltbtn.onclick = function(){
-        li.remove();
+     
+     
 
-     };
-     li.appendChild(dltbtn)
-     taskList.appendChild(li);
-     taskInp.value = "";
+
+   
      
     </script>
 </body>
