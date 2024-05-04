@@ -1,58 +1,82 @@
-// const ul = document.querySelector('ul')
-// let allPages = 15;
-// function elem(allPages,page)
-// {
-//     let li ='';
+ 
+const pageNumbers = document.querySelector(".pageNumbers")
+const paginationList = document.getElementById("pagination")
 
-//     let beforePages = page -1;
-//     let afterPages = page + 1;
+const listItem = document.querySelector("li");
 
-//     if(page>1){
-//         li += `<li class="btn" onclick="elem(allPages, ${page - 1})"> <i class="fa-solid fa-angle-left"></i> </li>`;
+const prevButton = document.getElementById("prev");
+const nextButton = document.getElementById("next");
 
-//     }
-//     for(let pageLength = beforePages <= afterPages; pageLength++){
-// if(page == pageLength){
-//     liActive = 'active';
+const  contentLimit = 10;
 
-// }else{
-//     liActive = "";
-// }
-// li += `<li class="numb ${liActive}"><span>${pageLength}</span></li>`
-//     }
-// if(page<allPages)
-// {
-//     li += ` <li class="btn" onclick="elem(allPages, ${page + 1})" > <i class="fa-solid fa-angle-right"></i></li>`;
+const pageCount = Math.ceil(listItem.length /contentLimit)
 
-// }
-// ul.innerHTML = li;
+let currentPage = 1;
 
-// }
-// elem(allPages,2)
+const displayPageNumbers = (index) =>{
+    const pageNumber = document.createElement("a");
+    pageNumber.innerText = index;
+    pageNumber.setAttribute('href',"a");
+    pageNumber.setAttribute("index",index);
+
+    pageNumbers.appendChild(pageNumber);
 
 
-const ul = document.querySelector('ul');
-let allPages = 15;
-
-function elem(allPages, page) {
-    let li = '';
-    let beforePages = page - 1;
-    let afterPages = page + 1;
-
-    if (page > 1) {
-        li += `<li class="btn" onclick="elem(${allPages}, ${page - 1})"> <i class="fa-solid fa-angle-left"></i> </li>`;
-    }
-
-    for (let pageLength = beforePages; pageLength <= afterPages; pageLength++) {
-        let liActive = (page == pageLength) ? 'active' : '';
-        li += `<li class="numb ${liActive}"><span>${pageLength}</span></li>`;
-    }
-
-    if (page < allPages) {
-        li += ` <li class="btn" onclick="elem(${allPages}, ${page + 1})" > <i class="fa-solid fa-angle-right"></i></li>`;
-    }
-
-    ul.innerHTML = li;
 }
 
-elem(allPages, 2);
+const getPageNumbers = ()=>{
+    for(let i=1; i <= pageCount; i++){
+        displayPageNumbers(i);
+    };
+}
+const disableButtons = (button) =>{
+    button.classList.add("disabled");
+    button.setAttribute("disabled",true)
+
+}
+
+const enableButton = (button) =>{
+    button.classList.remove("disabled");
+    button.removeAttribute("disabled");
+
+} 
+const controlButtonStatus = ()=>{
+    if(currentPage == 1){
+        disableButtons(prevButton);
+
+    }
+else {
+    enableButton(prevButton);
+}
+if(pageCount == currentPage){
+    disableButton(nextButton)
+}
+else {
+    enableButton(nextButton);
+}
+};
+const handleActivePageNumber = () =>{
+    document.querySelectorAll('a').forEach((button) =>{
+        button.classList.remove("active");
+        const pageIndex = Number(button.getAttribute("index"))
+        if(pageIndex == currentPage){
+            button.classList.add("active");
+
+        }
+    });
+};
+
+const setCurrentPage = (pageNum) =>{
+   currentPage = pageNum; 
+   handleActivePageNumber();
+   controlButtonStatus();
+
+   const prevRange = (pageNum - 1) *contentLimit;
+   const currRange = pageNum * contentLimit;
+   listItem.forEach((item,index) =>{
+item.classList.add('hidden');
+if(index >= prevRange && index < currRange){
+    item.classList.remove('hidden');
+}
+   });
+};
