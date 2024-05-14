@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    /* font-family: sans-serif; */
 }
 
  
@@ -18,15 +18,37 @@
 
 .overlay{
     width: 100%;
-    color: #fff;
     height: 100%;
+     
     display: flex;
+    align-items: center;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.7);
 }
-h2,h3{
+.title{
+    margin-top: 10px;
     color: #fff;
     text-align: center;
     font-size: 2.5rem;
-    flex-direction: column;
 }
+.col{
+    margin-top: 20px;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    color: #fff;
+}
+.col div{
+    width: 250px;
+    text-align: center;
+}
+input{
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-color: transparent;
+    border-radius: 5px;
+    height: 50px;
+    text-align: center;
+    font-size: 30px;
+}
+ 
