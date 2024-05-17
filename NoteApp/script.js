@@ -1,5 +1,7 @@
 
 
+
+
 const addNote = (text = "")=>{
     const note = document.createElement("div");
     note.classList.add("note")
@@ -37,26 +39,9 @@ const addNote = (text = "")=>{
             }
         )
      }
-)
+)()
 
 
-// save notes function
-
-
-const saveNotes = () =>{
-    const notes = document.querySelectorAll(".note textarea")
-    console.log(notes)
-    const data = [];
-    notes.forEach(
-        (note)=>{
-            data.push(note.value)
-        }
-    )
-//    console.log(data)
-
-localStorage.setItem("notes", JSON.stringify(data))
-}
- 
 let addBtn = document.querySelector("#addBtn");
  
 let main = document.querySelector("#main");
