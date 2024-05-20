@@ -1,7 +1,3 @@
-
-
-
-
 const addNote = (text = "")=>{
     const note = document.createElement("div");
     note.classList.add("note")
@@ -10,7 +6,7 @@ const addNote = (text = "")=>{
         <i  id="vikas" class="save fa-solid fa-bookmark"></i>
         <i   class="trash  fa-solid fa-trash"></i>
     </div>
-    <textarea >${text}
+    <textarea >${text} 
     </textarea>   
     `;
     note.querySelector(".trash").addEventListener("click",
