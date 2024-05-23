@@ -37,7 +37,7 @@ body{
     justify-content: center;
     align-items: center;
 }
-#btn{
+button{
     width: 90%;
     height: 40px;
     /* padding: 20px; */
