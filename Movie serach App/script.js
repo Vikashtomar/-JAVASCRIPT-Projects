@@ -20,6 +20,7 @@
  const showMovieData = (data)=>{
 
     movieContainer.innerHTML ="";
+    movieContainer.classList.remove('noBg');
 
      // array desructring assigment to extract properties from data object
 const {Title,imdbRating,Genre,Released,Runtime,Actors,Plot,Poster} = data;
@@ -62,6 +63,10 @@ const {Title,imdbRating,Genre,Released,Runtime,Actors,Plot,Poster} = data;
     if(movieName !== '')
         {
             getMovieinfo(movieName)
+        }
+        else{
+            movieContainer.innerHTML = `<h2> Enter Valid movie Name </h2>`;
+            movieContainer.classList.add('noBg');
         }
  })
 
