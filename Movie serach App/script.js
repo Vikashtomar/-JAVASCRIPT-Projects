@@ -13,7 +13,7 @@
     const data = await response.json();
     
     showMovieData(data)
- }
+ } 
 
  // showmovie Data Function show data on screen
  
