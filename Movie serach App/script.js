@@ -6,21 +6,31 @@
  // function to fetch movie data using omdb API
 
  const getMovieinfo = async(movie)=>{
-    const myApiKey = '9d877c66';
-    const url = `http://www.omdbapi.com/?apikey=${myApiKey}&t=${movie}`;
+    try{
 
-    const response = await fetch(url);
-    const data = await response.json();
-    
-    showMovieData(data)
- } 
+        const myApiKey = '9d877c66';
+        const url = `http://www.omdbapi.com/?apikey=${myApiKey}&t=${movie}`;
+        
+        const response = await fetch(url);
+        if(!response.ok){
+      throw new Error("Unable to fetch Movie data.")
+        }
+        const data = await response.json();
+        
+        showMovieData(data)
+    } 
+    catch(error){
+        showerrMsg("No Movie Found as such Name!!");
+    }
+}
 
  // showmovie Data Function show data on screen
  
  const showMovieData = (data)=>{
 
     movieContainer.innerHTML ="";
-    movieContainer.classList.remove('noBg');
+    movieContainer.classList.remove('noBg'); 
+    
 
      // array desructring assigment to extract properties from data object
 const {Title,imdbRating,Genre,Released,Runtime,Actors,Plot,Poster} = data;
@@ -56,6 +66,16 @@ const {Title,imdbRating,Genre,Released,Runtime,Actors,Plot,Poster} = data;
       movieContainer.appendChild(movieElement)
  }
 
+
+ // function to display error msgs
+
+ const showerrMsg = (message)=>{
+ 
+    movieContainer.innerHTML = `<h2> ${message} </h2>`;
+    movieContainer.classList.add('noBg');
+
+ }
+
  //Adding event lister to search form
  searchForm.addEventListener('submit',(e)=>{
     e.preventDefault()
@@ -65,8 +85,8 @@ const {Title,imdbRating,Genre,Released,Runtime,Actors,Plot,Poster} = data;
             getMovieinfo(movieName)
         }
         else{
-            movieContainer.innerHTML = `<h2> Enter Valid movie Name </h2>`;
-            movieContainer.classList.add('noBg');
+             showerrMsg("movie name to kam se kam enter kro!!");
+             
         }
  })
 
