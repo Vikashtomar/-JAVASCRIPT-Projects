@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded',function(){
         }
 
         const li = document.createElement('li');
-        li.innerHTML = `<span>$`
+        li.innerHTML = `<span>${taskText}`
 
     }
 })
